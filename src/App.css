@@ -1,19 +1,22 @@
 body {
-  background-color: #c9bcbca1;
+  background-color: #f1f1f1;
+  font: 1rem Arial serif;
+  letter-spacing: .5px;
+}
+main {
+  background-color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .table {
   display: flex;
   flex-direction: column;
-  padding: 0;
-  background-color: white;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  border-radius: 10px;
+  padding: 0 1rem 0 1rem;
 }
 .table__row {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: left;
 }
 li:first-of-type{
   font-weight: bold;
@@ -22,10 +25,10 @@ li:not(:first-of-type) {
   cursor: pointer;
 }
 li:not(:first-of-type):hover {
-  background-color:#c9bcbc59;
+  background-color:#f1f1f1;
 }
 .table__row div {
-  padding: 1rem 0 1rem 0;
+  padding: 1rem .5rem 1rem .5rem;
 }
 .table__row--art {
   width: 10%;

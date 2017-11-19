@@ -1,0 +1,50 @@
+body {
+  background-color: #c9bcbca1;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background-color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+.table__row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+li:first-of-type{
+  font-weight: bold;
+}
+li:not(:first-of-type) {
+  cursor: pointer;
+}
+li:not(:first-of-type):hover {
+  background-color:#c9bcbc59;
+}
+.table__row div {
+  padding: 1rem 0 1rem 0;
+}
+.table__row--art {
+  width: 10%;
+}
+.table__row--name {
+  width: 20%;
+}
+.table__row--brand {
+  width: 10%;
+}
+.table__row--weight {
+  width: 10%;
+}
+.table__row--quantity {
+  width: 10%;
+}
+.table__row--price {
+  width: 15%;
+}
+.table__row--stock {
+  width: 10%;
+}

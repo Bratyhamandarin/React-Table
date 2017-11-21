@@ -13,23 +13,22 @@ class App extends Component {
     this.state = {
       food: data,
       selected: '',
-      pageOfItems: [],
-      buffer: data
+      pageOfItems: []
     }
   };
 
 
-  logChange = (val) => {
+  handleChangeFilter = (val) => {
     this.setState({
       selected: val.value,
-      buffer: this.state.food.filter(obj => obj.brand === val.value)
+      food: data.filter(obj => obj.brand === val.value)
     })
   };
 
-  handlerReset = () => {
+  handleResetFilter = () => {
     this.setState({
       selected: '',
-      buffer: data
+      food: data
     })
   }
 
@@ -41,37 +40,37 @@ class App extends Component {
 
   render() {
 
-    const allBrandNames = this.state.food.map(item => item.brand),
+    const allBrandNames = data.map(item => item.brand),
       uniqBrandName = uniq(allBrandNames),
       options = uniqBrandName.map(brand => ({ value: brand, label: brand }))
 
     return (
       <div className='wrapper'>
-        <header>
-          <div className='filter__search'>фильтры</div>
-          <div className='filter__select'>
-            <label>Бренды:</label>
+        <header className='filter'>
+          <div className='filter__search filter_pointer'>фильтры</div>
+          <div className='filter__select select'>
+            <label className='select__label filter_pointer'>Бренды:</label>
             <Select
               placeholder='показать все'
-              className='select'
+              className='filter_pointer'
               name='form-field-name'
               searchable={false}
               clearable={false}
               value={this.state.selected}
               options={options}
-              onChange={this.logChange}
+              onChange={this.handleChangeFilter}
             />
           </div>
-          <div className='filter__reset' onClick={this.handlerReset}>Сбросить фильтры</div>
+          <div className='filter__reset filter_pointer' onClick={this.handleResetFilter}>Сбросить фильтры</div>
         </header>
-        <main>
-          <h2>
-            <p><output>{this.state.buffer.length}</output> Товара</p>
+        <main className='items'>
+          <h2 className='items__total'>
+            <p><output>{this.state.food.length}</output> Товара</p>
           </h2>
           <Table food={this.state.pageOfItems} />
         </main>
         <footer>
-          <Pagination items={this.state.buffer} onChangePage={this.onChangePage} />
+          <Pagination items={this.state.food} onChangePage={this.onChangePage} />
         </footer>
 
       </div>

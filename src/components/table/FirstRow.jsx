@@ -2,14 +2,14 @@ import React from 'react'
 
 export const FirstRow = () => {
     return (
-        <li className='table__row'>
-          <div className='table__row--art'>Артикул</div>
-          <div className='table__row--name'>Название товара</div>
-          <div className='table__row--brand'>Бренд</div>
-          <div className='table__row--weight'>Вес</div>
-          <div className='table__row--quantity'>Фасовка</div>
-          <div className='table__row--price'>Цена с учетом персональной скидки</div>
-          <div className='table__row--stock'>Наличие</div>
+        <li className='items-table__row row row_bold'>
+          <div className='row__item row__item_sm'>Артикул</div>
+          <div className='row__item row__item_lg'>Название товара</div>
+          <div className='row__item row__item_sm'>Бренд</div>
+          <div className='row__item row__item_sm'>Вес</div>
+          <div className='row__item row__item_sm'>Фасовка</div>
+          <div className='row__item row__item_md'>Цена с учетом персональной скидки</div>
+          <div className='row__item row__item_sm'>Наличие</div>
         </li> 
     )
 }

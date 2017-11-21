@@ -1,6 +1,7 @@
 * {
   outline: none;
   margin: 0;
+  list-style: none;
 }
 body {
   background-color: #f1f1f1;
@@ -13,7 +14,7 @@ main, header, footer {
   margin-right: 1rem;
   border-bottom: 2px #f1f1f1 solid;
 }
-header {
+.filter {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -21,7 +22,7 @@ header {
   background-color: white;
   align-items: center;
 }
-header div {
+.filter_pointer {
   cursor: pointer;
 }
 .filter__search {
@@ -33,7 +34,7 @@ header div {
   flex-direction: row;
   align-items: center;
 }
-.filter__select label {
+.select__label {
   font-weight: 800;
 }
 .Select-control {
@@ -43,71 +44,54 @@ header div {
 .filter__reset {
   text-decoration: underline;
 }
-main {
+.items {
   padding: 0 1rem 1rem 1rem;
 }
-main h2 {
+.items__total{
   color: #c7c7c7;
 }
-.table {
+.items-table {
   display: flex;
   flex-direction: column;
   padding: 0;
 }
-.table__row {
+.items-table__row {
   display: flex;
   width: 100%;
   justify-content: left;
 }
-.table li:first-of-type{
-  font-weight: bold;
+.row_bold {
+  font-weight: 800;
 }
-.table li:not(:first-of-type) {
-  cursor: pointer;
-}
-.table li:not(:first-of-type):hover {
+.row + .filter_pointer:hover {
   background-color:#f1f1f1;
 }
-.table__row div {
+.row__item {
   padding: 1rem .5rem 1rem .5rem;
 }
-.table__row--art {
-  width: 10%;
-}
-.table__row--name {
+.row__item_lg {
   width: 20%;
 }
-.table__row--brand {
-  width: 10%;
+.row__item_md {
+  width: 15%
 }
-.table__row--weight {
-  width: 10%;
-}
-.table__row--quantity {
-  width: 10%;
-}
-.table__row--price {
-  width: 15%;
-}
-.table__row--stock {
-  width: 10%;
+.row__item_sm {
+  width: 10%
 }
 
+footer {
+  height: 5rem;
+}
 .pagination {
   display: flex;
   justify-content: flex-end;
-  height: 5rem;
   padding: 1rem 0 0 0;
-  align-items: baseline;
 }
-.pagination li{
-  list-style: none;
-}
-.pagination li:not(.disabled) {
+
+.normal, .active {
   cursor: pointer;
 }
-.pagination a {
-  box-sizing: border-box;
+.pagination__link {
   padding: .5rem;
 }
 .active {

@@ -9,7 +9,7 @@ export const TableRow = (props) => {
         <div className='table__row--weight'>{props.weight} кг</div>
         <div className='table__row--quantity'>{props.quantity} шт</div>
         <div className='table__row--price'>{props.price} рублей</div>
-        <div className='table__row--stock'>{props.stock == 1? 'есть' : 'нету'}</div>
+        <div className='table__row--stock'>{props.stock === 1? 'есть' : 'нету'}</div>
     </li>
     )
 }
